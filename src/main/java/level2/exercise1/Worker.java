@@ -1,8 +1,7 @@
 package level2.exercise1;
 
-import java.io.Serializable;
 
-@JsonSerializable(directory="src/level2/exercise1/json")
+@JsonSerializable(directory="output/json")
 public abstract class Worker {
     private String name;
     private String lastName;

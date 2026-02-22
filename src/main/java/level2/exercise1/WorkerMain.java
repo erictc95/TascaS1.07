@@ -19,7 +19,8 @@ public class WorkerMain {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        Worker[] workers= {ow1, ow2, ftfw1, ftfw2};
+        Worker[] workers = {ow1, ow2, ftfw1, ftfw2};
+
 
         for (Worker worker : workers) {
             JsonSerializable annotation = worker.getClass().getAnnotation(JsonSerializable.class);
@@ -27,19 +28,20 @@ public class WorkerMain {
             if (annotation != null) {
                 dir = annotation.directory();
             }
-        }
 
-        File folder = new File(dir);
-        if (!folder.exists()) {
-            folder.mkdirs();
-        }
 
-        String fileName = dir + "/" + worker.getName() + "_" + worker.getLastName() + ".json";
+            File folder = new File(dir);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
 
-        try (FileWriter writer = new FileWriter(fileName)) {
-            gson.toJson(worker, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
+            String fileName = dir + "/" + worker.getName() + "_" + worker.getLastName() + ".json";
+
+            try (FileWriter writer = new FileWriter(fileName)) {
+                gson.toJson(worker, writer);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 
