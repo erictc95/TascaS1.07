@@ -10,8 +10,8 @@ public class WorkerMain {
         System.out.println(ow1);
         System.out.println(ftfw1);
 
-        int hoursOnline = 30;
-        int hoursFace = 55;
+        int hoursOnline = 160;
+        int hoursFace = 200;
 
         // Calcular y mostrar salarios
         System.out.println("Salary of Online Worker: " + ow1.calculateSalary(hoursOnline) + "€");
