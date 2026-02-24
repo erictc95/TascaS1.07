@@ -26,7 +26,7 @@
 1. Clone the repository:
 
 ````bash
-git clone https://github.com/erictc95/TascaS1.06.git
+git clone https://github.com/erictc95/TascaS1.07.git
 ````
 
 2. Open the project in IntelliJ IDEA or compile with Maven:
