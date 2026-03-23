@@ -2,21 +2,31 @@ package level1.exercise1;
 
 public class WorkerMain {
     public static void main(String[] args) {
+        Worker ow1 = createOnlineWorker();
+        Worker ftfw1 = createFaceToFaceWorker();
 
-        Worker ow1 = new OnlineWorker("Panoramix", "Galix", 45);
-        Worker ftfw1 = new FaceToFaceWorker("Conde", "Draculus", 35);
+        printWorker(ow1);
+        printWorker(ftfw1);
 
-        // Mostrar datos de los trabajadores
-        System.out.println(ow1);
-        System.out.println(ftfw1);
+        printSalary(ow1, 160);
+        printSalary(ftfw1, 200);
 
-        int hoursOnline = 160;
-        int hoursFace = 200;
+    }
 
-        // Calcular y mostrar salarios
-        System.out.println("Salary of Online Worker: " + ow1.calculateSalary(hoursOnline) + "€");
-        System.out.println("Salary of Face-to-Face Worker: " + ftfw1.calculateSalary(hoursFace) + "€");
+    private static Worker createOnlineWorker() {
+        return new OnlineWorker("Panoramix", "Galix", 45);
+    }
 
+    private static Worker createFaceToFaceWorker() {
+        return new FaceToFaceWorker("Conde", "Draculus", 35);
+    }
 
+    private static void printWorker(Worker worker) {
+        System.out.println(worker);
+    }
+
+    private static void printSalary(Worker worker, int hours) {
+        double salary = worker.calculateSalary(hours);
+        System.out.println("Salary of " + worker.getClass().getSimpleName() + ": " + worker.calculateSalary(hours) + "€");
     }
 }

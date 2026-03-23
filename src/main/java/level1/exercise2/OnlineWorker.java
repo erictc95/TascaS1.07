@@ -15,7 +15,7 @@ public class OnlineWorker extends Worker {
     }
 
     @Deprecated
-    public void oldMethod(int workedHours) {
-        System.out.println("Deprecated in OnlineWorker. Use calculateSalary() instead.");
+    public void oldCalculate() {
+        System.out.println("Old online calculation method.");
     }
 }

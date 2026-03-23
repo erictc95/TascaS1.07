@@ -46,5 +46,5 @@ public abstract class Worker {
 
     public abstract double calculateSalary(int workedHours);
 
-    public abstract void oldMethod(int workedHours);
+    public abstract void oldCalculate();
 }

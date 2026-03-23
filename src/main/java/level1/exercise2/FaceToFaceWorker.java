@@ -1,7 +1,7 @@
 package level1.exercise2;
 
 public class FaceToFaceWorker extends Worker {
-    private static double gasoline = 50;
+    private static final double GASOLINE = 50;
 
     public FaceToFaceWorker (String name, String lastName, double hourPrice) {
         super (name, lastName, hourPrice);
@@ -9,11 +9,11 @@ public class FaceToFaceWorker extends Worker {
 
     @Override
     public double calculateSalary(int workedHours) {
-        return (workedHours * getHourPrice()) + gasoline;
+        return (workedHours * getHourPrice()) + GASOLINE;
     }
 
     @Deprecated
-    public void oldMethod(int workedHours) {
-        System.out.println("Deprecated in FaceToFaceWorker. Use calculateSalary() instead.");
+    public void oldCalculate() {
+        System.out.println("Old face-to-face calculation method.");
     }
 }
